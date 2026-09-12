@@ -1,5 +1,5 @@
-// pingServer.js
-import http from 'http';
+// pingServer.cjs  — CommonJS version
+const http = require('http');
 
 const PORT = process.env.PORT || 3000;
 const SELF_URL = process.env.RENDER_EXTERNAL_URL || `http://localhost:${PORT}`;
@@ -47,7 +47,6 @@ server.listen(PORT, () => {
     console.log(`🌐 Try: ${SELF_URL}/ping/me`);
 });
 
-// Self keep-alive
 const KEEP_ALIVE_INTERVAL = 10 * 60 * 1000;
 setInterval(async () => {
     try {
